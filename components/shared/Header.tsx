@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from "next/legacy/image"
 import Link from "next/link"
 import {SignedOut, UserButton, SignedIn} from '@clerk/nextjs'
 import { Button } from "../ui/button"
