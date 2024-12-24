@@ -6,7 +6,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { ICategory } from "@/lib/database/models/category.model"
-import { startTransition, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import {
   AlertDialog,
   AlertDialogAction,
@@ -57,7 +57,7 @@ const Dropdown = ({ value, onChangeHandler }: DropdownProps) => {
       <SelectContent>
         {categories.length > 0 &&
           categories.map((category) => (
-            // Change curly braces to parentheses to properly return JSX
+            // Ensure parentheses around JSX to avoid any confusion with return value
             <SelectItem
               key={category._id}
               value={category._id}
@@ -85,7 +85,7 @@ const Dropdown = ({ value, onChangeHandler }: DropdownProps) => {
             </AlertDialogHeader>
             <AlertDialogFooter>
               <AlertDialogCancel>Cancel</AlertDialogCancel>
-              {/* Directly call handleAddCategory without startTransition */}
+              {/* Call handleAddCategory directly without startTransition */}
               <AlertDialogAction
                 onClick={() => handleAddCategory()}
                 className="bg-green-700 hover:bg-green-900"
