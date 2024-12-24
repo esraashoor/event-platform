@@ -55,7 +55,6 @@ const Dropdown = ({ value, onChangeHandler }: DropdownProps) => {
         <SelectValue placeholder="Category" />
       </SelectTrigger>
       <SelectContent>
-        {/* Ternary operator for rendering categories */}
         {categories.length > 0 ? (
           categories.map((category) => (
             <SelectItem
@@ -67,7 +66,7 @@ const Dropdown = ({ value, onChangeHandler }: DropdownProps) => {
             </SelectItem>
           ))
         ) : (
-          <div>No categories available</div> // Optional fallback message
+          <div>No categories available</div> // Fallback message
         )}
 
         <AlertDialog>
@@ -88,8 +87,9 @@ const Dropdown = ({ value, onChangeHandler }: DropdownProps) => {
             </AlertDialogHeader>
             <AlertDialogFooter>
               <AlertDialogCancel>Cancel</AlertDialogCancel>
+              {/* Ensure onClick calls handleAddCategory directly */}
               <AlertDialogAction
-                onClick={() => handleAddCategory()}
+                onClick={handleAddCategory}
                 className="bg-green-700 hover:bg-green-900"
               >
                 Add
