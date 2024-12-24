@@ -39,7 +39,7 @@ const EventDetails = async ({ params: {id}, searchParams}: SearchParamProps) => 
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
              <div className="flex gap-3">
              <p className="p-bold-20 rounded-full bg-green-500/10 px-5 py-2 text-green-700">
-                  {event.isFree ? 'FREE' : `$${event.price}`}
+                  {event.isFree ? "FREE" : `$${event.price}`}
              </p>
 
              <p className="p-medium-16 rounded-full bg-grey-500/10 px-4 py-2.5 text-grey-500">
@@ -48,7 +48,7 @@ const EventDetails = async ({ params: {id}, searchParams}: SearchParamProps) => 
              </div>
             
              <p className="p-medium-18 ml-2 mt-2 sm:mt-0">
-              by <span className="text-green-700">{event.organizer.firstName} {event.organizer.lastName}</span>
+             by <span className="text-green-700">{event.organizer.firstName} {event.organizer.lastName}</span>
              </p>
             </div>
           </div> 

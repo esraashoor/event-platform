@@ -17,10 +17,10 @@ type CollectionProps = {
     data,
     emptyTitle,
     emptyStateSubtext,
-    page: _page,
-    totalPages: _totalPages = 0,
+    // page: _page,
+    // totalPages: _totalPages = 0,
     collectionType,
-    urlParamName: _urlParamName,
+    // urlParamName: _urlParamName,
   }: CollectionProps) => {
     return (
         <>
