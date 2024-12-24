@@ -48,8 +48,7 @@ const EventDetails = async ({ params: {id}, searchParams}: SearchParamProps) => 
              </div>
             
              <p className="p-medium-18 ml-2 mt-2 sm:mt-0">
-                by{' '}
-                <span className="text-green-700">{event.organizer.firstName} {event.organizer.lastName}</span>
+              by <span className="text-green-700">{event.organizer.firstName} {event.organizer.lastName}</span>
              </p>
             </div>
           </div> 

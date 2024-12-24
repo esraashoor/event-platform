@@ -6,8 +6,6 @@ import { auth } from '@clerk/nextjs/server'
 
 import Image from 'next/image'
 import Link from 'next/link'
-
-import React, { useState, useEffect } from 'react';
 import { DeleteConfirmation } from './DeleteConfirmation'
 
 type CardProps = {
