@@ -5,13 +5,17 @@ import { formatDateTime } from '@/lib/utils';
 import { SearchParamProps } from '@/types';
 import Image from 'next/image';
 
-const EventDetails = async ({ params, searchParams }: SearchParamProps) => {
+// Define params and searchParams as Promises
+type Params = Promise<{ id: string }>;
+type SearchParams = Promise<{ page?: string | string[] }>;
+
+// Use async function for event details
+const EventDetails = async ({ params, searchParams }: { params: Params; searchParams: SearchParams }) => {
   // Await params and searchParams
   const resolvedParams = await params; // Await params to resolve
   const resolvedSearchParams = await searchParams; // Await searchParams to resolve
 
   const { id } = resolvedParams; // Destructure id from resolvedParams
-
   const event = await getEventById(id);
 
   // Safely extract and handle `page`
@@ -49,7 +53,8 @@ const EventDetails = async ({ params, searchParams }: SearchParamProps) => {
                   </p>
                 </div>
                 <p className="p-medium-18 ml-2 mt-2 sm:mt-0">
-                  by <span className="text-green-700">{event.organizer.firstName} {event.organizer.lastName}</span>
+                  by{' '}
+                  <span className="text-green-700">{event.organizer.firstName} {event.organizer.lastName}</span>
                 </p>
               </div>
             </div>
@@ -74,11 +79,12 @@ const EventDetails = async ({ params, searchParams }: SearchParamProps) => {
             <div className="flex flex-col gap-2">
               <p className="p-bold-20 text-grey-600">What You'll Learn:</p>
               <p className="p-medium-16 lg:p-regular-18">{event.description}</p>
-              <p className="p-medium-16 lg:p-regular-18 truncate text-primary-500 underline">{event.url}</p>
+              <p className="p-medium-16 lg:p-regular-18 truncate text-green-700 underline">{event.url}</p>
             </div>
           </div>
         </div>
       </section>
+
       <section className="wrapper my-8 flex flex-col gap-8 md:gap-12">
         <h2 className="h2-bold">Related Events</h2>
         <Collection
